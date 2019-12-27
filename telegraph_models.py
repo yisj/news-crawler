@@ -1,6 +1,6 @@
 from peewee import *
 
-db = SqliteDatabase('telegraph.db')
+db = SqliteDatabase('/home/seungjae/news-crawler/telegraph.db')
 
 class Headline(Model):
     text = CharField()

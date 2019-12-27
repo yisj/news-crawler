@@ -10,7 +10,7 @@ db.connect()
 def random_headers():
     return {'User-Agent': random.choice(browsers)}
 
-tr = TorRequest(proxy_port=9050, ctrl_port=9051, password=None)
+tr = TorRequest(proxy_port=9052, ctrl_port=9053, password=None)
 target_url = 'https://telegraph.co.uk'
 
 r = tr.get(target_url, headers=random_headers())
