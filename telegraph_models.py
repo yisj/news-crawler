@@ -1,7 +1,8 @@
 import os
 from peewee import *
 
-ap = os.path.abspath('telegraph.db')
+script_dir = os.path.dirname(__file__)
+ap = os.path.join(script_dir, 'telegraph.db')
 db = SqliteDatabase(ap)
 
 
