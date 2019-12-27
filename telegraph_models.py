@@ -1,6 +1,9 @@
+import os
 from peewee import *
 
-db = SqliteDatabase('/home/seungjae/news-crawler/telegraph.db')
+ap = os.path.abspath('telegraph.db')
+db = SqliteDatabase(ap)
+
 
 class Headline(Model):
     text = CharField()
