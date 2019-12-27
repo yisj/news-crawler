@@ -6,9 +6,16 @@ ap = os.path.join(script_dir, 'telegraph.db')
 db = SqliteDatabase(ap)
 
 
-class Headline(Model):
-    text = CharField()
-    href = CharField()
-
+class BaseModel(Model):
     class Meta:
         database = db
+
+class Headline(BaseModel):
+    text = TextField()
+    href = TextField()
+
+class Article(BaseModel):
+    title = TextField()
+    body = TextField()
+    headline = ForeignKeyField(Headline, backref='articles')
+
