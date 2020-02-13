@@ -13,9 +13,10 @@ class BaseModel(Model):
 class Headline(BaseModel):
     text = TextField()
     href = TextField()
+    crawl_try = IntegerField(default=0)
+    crawl_success = IntegerField(default=0)
 
-class Article(BaseModel):
-    title = TextField()
-    body = TextField()
+class Paragraph(BaseModel):
+    text = TextField()
     headline = ForeignKeyField(Headline, backref='articles')
 
